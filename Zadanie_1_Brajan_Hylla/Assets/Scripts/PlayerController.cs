@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 5;
     public Rigidbody rigidbody;
+    public Transform startPoint;
     
     void Start()
     {
@@ -25,6 +26,11 @@ public class PlayerController : MonoBehaviour
         {
             float directionVertical = Input.GetAxis("Vertical");
             rigidbody.AddForce(0, 0, directionVertical * Time.deltaTime * speed, ForceMode.Impulse);
+        }
+        if (transform.position.y <= -1)
+        {
+            transform.position = startPoint.position;
+            rigidbody.velocity = Vector3.zero;
         }
     }
 }
