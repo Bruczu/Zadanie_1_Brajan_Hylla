@@ -10,7 +10,7 @@ public class CheckpointController : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             playerController.checkpoint++;
-            Debug.Log(playerController.checkpoint);
+            Debug.Log("Checkpoint: " + playerController.checkpoint);
             Destroy(this.gameObject);
         }
     }

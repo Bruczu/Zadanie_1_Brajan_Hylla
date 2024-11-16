@@ -8,7 +8,9 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 5;
     public float checkpoint;
+    public int zebranePunkty;
     public Rigidbody rigidbody;
+
     public Transform startPoint;
     public Transform checkpoint_1;
     public Transform checkpoint_2;
