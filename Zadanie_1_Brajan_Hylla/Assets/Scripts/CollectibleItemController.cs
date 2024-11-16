@@ -17,7 +17,6 @@ public class CollectibleItemController : MonoBehaviour
         if (isMovingUp)
         {
             transform.Translate(0, 1 * Time.deltaTime * speed, 0);
-
             if (transform.position.y > CollectibleTop.position.y)
             {
                 isMovingUp = false;
@@ -26,7 +25,6 @@ public class CollectibleItemController : MonoBehaviour
         else
         {
             transform.Translate(0, - 1 * Time.deltaTime * speed, 0);
-
             if (transform.position.y < CollectibleBottom.position.y)
             {
                 isMovingUp = true;
