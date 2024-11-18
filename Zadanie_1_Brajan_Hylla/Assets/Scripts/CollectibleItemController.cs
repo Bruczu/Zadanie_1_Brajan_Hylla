@@ -7,13 +7,16 @@ public class CollectibleItemController : MonoBehaviour
     public PlayerController playerController;
     public float speed;
     public bool isMovingUp = true;
+    public bool spin;
     public Transform CollectibleTop;
     public Transform CollectibleBottom;
 
     void Update()
     {
-        transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y + 20 * Time.deltaTime, transform.localEulerAngles.z);
-
+        if (spin)
+        {
+            transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y + 20 * Time.deltaTime, transform.localEulerAngles.z);
+        }
         if (isMovingUp)
         {
             transform.Translate(0, 1 * Time.deltaTime * speed, 0);
