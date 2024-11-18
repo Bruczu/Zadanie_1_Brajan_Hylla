@@ -10,6 +10,16 @@ public class CollectibleItemController : MonoBehaviour
     public bool spin;
     public Transform CollectibleTop;
     public Transform CollectibleBottom;
+    /*
+    public EndGameController endGameController;
+    GameObject[] allCoins;
+    void Start()
+    {
+        allCoins = GameObject.FindGameObjectsWithTag("Coin");
+    }
+
+    */
+
 
     void Update()
     {
@@ -33,23 +43,28 @@ public class CollectibleItemController : MonoBehaviour
                 isMovingUp = true;
             }
         }
-        /*if (endGameController.wygrana == true)
+        /*
+        if (endGameController.wygrana == true)
         {
             this.gameObject.SetActive(true);
-            endGameController.wygrana = false;
             Debug.Log("Zresetowano poziom");
-        }*/
+            foreach (GameObject Coin in allCoins)
+                Coin.SetActive(true);
+            Debug.Log("zresetowano monety");
+            endGameController.wygrana = false;
+        }
+        */
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             playerController.zebranePunkty++;
+            //playerController.zebranePunkty= playerController.zebranePunkty + 12;
             Debug.Log("Zebrane Punkty: " + playerController.zebranePunkty);
             this.gameObject.SetActive(false);
 
             //Destroy(this.gameObject);
         }
     }
-    
 }

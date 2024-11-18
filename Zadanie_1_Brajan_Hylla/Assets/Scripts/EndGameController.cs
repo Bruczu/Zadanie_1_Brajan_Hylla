@@ -6,6 +6,9 @@ public class EndGameController : MonoBehaviour
 {
     public PlayerController playerController;
     public int iloscPunktowDoZebrania;
+    
+    //public bool wygrana;
+   
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -13,6 +16,7 @@ public class EndGameController : MonoBehaviour
             if (playerController.zebranePunkty == iloscPunktowDoZebrania)
             {
                 Debug.Log("Zebra³eœ wszystkie punkty oraz pokona³eœ tor przeszkód! Brawo, wygra³eœ! Koniec gry.");
+                //wygrana = true;
             }
         }
     }
