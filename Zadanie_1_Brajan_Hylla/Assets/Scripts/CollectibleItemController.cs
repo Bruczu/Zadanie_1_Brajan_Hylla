@@ -33,6 +33,12 @@ public class CollectibleItemController : MonoBehaviour
                 isMovingUp = true;
             }
         }
+        /*if (endGameController.wygrana == true)
+        {
+            this.gameObject.SetActive(true);
+            endGameController.wygrana = false;
+            Debug.Log("Zresetowano poziom");
+        }*/
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -40,7 +46,10 @@ public class CollectibleItemController : MonoBehaviour
         {
             playerController.zebranePunkty++;
             Debug.Log("Zebrane Punkty: " + playerController.zebranePunkty);
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
+
+            //Destroy(this.gameObject);
         }
     }
+    
 }
